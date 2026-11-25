@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#172b4d">
+<meta name="description" content="DevOps Solutions: CI/CD, containers, monitoring and cloud deployment. Responsive page with a filterable CSS Grid gallery, positioning demos, live API data, a deployment tracker (CRUD with Local Storage) and a validated service request form.">
+<title>DevOps Solutions | Interactive Responsive Page</title>
+<link rel="stylesheet" href="practicum 14..css">
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="status-pill" role="status"><span class="status-dot" aria-hidden="true"></span><span class="status-text">All systems operational</span></div>
+<a href="#top" class="fab-top" aria-label="Back to top">&uarr; <span class="fab-text">Top</span></a>
+
+<div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Enlarged image">
+    <button type="button" class="lightbox-close" aria-label="Close image">&times;</button>
+    <figure>
+        <img id="lightbox-img" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+</div>
+
+<header>
+    <h1>DevOps Solutions</h1>
+    <p class="tagline">Automate &bull; Deploy &bull; Monitor</p>
+    <div class="header-actions">
+        <a class="btn btn-primary" href="#contact">Request a service</a>
+        <a class="btn btn-ghost" href="#services">See our services</a>
+    </div>
+    <p class="layout-chip" aria-hidden="true"></p>
+</header>
+
+<nav aria-label="Main navigation">
+    <div class="nav-inner">
+        <a class="nav-brand" href="#top">DevOps Solutions</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-label">Menu</span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#positioning">Positioning</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#tracker">Tracker</a></li>
+            <li><a href="#api">Live Data</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main id="main">
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our DevOps Services</h2>
+    <div class="card-grid">
+        <article class="service-card">
+            <span class="badge badge-popular">Popular</span>
+            <h3>CI/CD</h3>
+            <p>We automate software building, testing and deployment.</p>
+            <button class="card-toggle" type="button" aria-expanded="false" aria-controls="info-cicd"><span class="card-toggle-text">More details</span></button>
+            <div class="card-info" id="info-cicd"><div class="card-info-inner"><ul><li>Build and test on every commit</li><li>Automatic release packaging</li><li>One-click rollback</li></ul></div></div>
+        </article>
+        <article class="service-card">
+            <h3>Containers</h3>
+            <p>We use Docker containers to run applications efficiently.</p>
+            <button class="card-toggle" type="button" aria-expanded="false" aria-controls="info-containers"><span class="card-toggle-text">More details</span></button>
+            <div class="card-info" id="info-containers"><div class="card-info-inner"><ul><li>Same environment everywhere</li><li>Fast start-up and scaling</li><li>Kubernetes ready</li></ul></div></div>
+        </article>
+        <article class="service-card">
+            <span class="badge badge-new">New</span>
+            <h3>Monitoring</h3>
+            <p>We monitor applications and servers for better performance.</p>
+            <button class="card-toggle" type="button" aria-expanded="false" aria-controls="info-monitoring"><span class="card-toggle-text">More details</span></button>
+            <div class="card-info" id="info-monitoring"><div class="card-info-inner"><ul><li>Live metrics and dashboards</li><li>Instant alerts</li><li>Uptime reports</li></ul></div></div>
+        </article>
+        <article class="service-card">
+            <h3>Deployment</h3>
+            <p>We provide fast and reliable cloud deployment solutions.</p>
+            <button class="card-toggle" type="button" aria-expanded="false" aria-controls="info-deployment"><span class="card-toggle-text">More details</span></button>
+            <div class="card-info" id="info-deployment"><div class="card-info-inner"><ul><li>Zero-downtime releases</li><li>Auto scaling on AWS</li><li>Safe staged rollouts</li></ul></div></div>
+        </article>
+    </div>
+
+    <!-- Native HTML Accordion using <details> and <summary> -->
+    <h3 class="sub-title">Service Level &amp; Architecture FAQ</h3>
+    <div class="faq-accordion">
+        <details class="faq-item" open>
+            <summary>How fast can we migrate an existing monolith to Docker &amp; Kubernetes?</summary>
+            <div class="faq-body">
+                <p>Most mid-sized web applications are containerized within 1 to 2 weeks, starting with stateless services and staging pipelines before zero-downtime production cutover.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>What uptime SLA is included with 24/7 Premium Monitoring?</summary>
+            <div class="faq-body">
+                <p>Our 24/7 Premium plan guarantees 99.95% infrastructure availability, automated PagerDuty/Slack escalation within 60 seconds, and automated multi-region failover.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Do you support multi-cloud and hybrid on-premise deployments?</summary>
+            <div class="faq-body">
+                <p>Yes. Using Terraform, Helm, and GitHub Actions, we maintain identical deployment manifests across AWS, Azure, Google Cloud, and private bare-metal clusters.</p>
+            </div>
+        </details>
+    </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section id="technology">
+    <h2>DevOps Technologies</h2>
+    <div class="tech-layout">
+        <ul class="tech-list">
+            <li>GitHub</li><li>Jenkins</li><li>Docker</li><li>Kubernetes</li><li>AWS</li>
+        </ul>
+        <figure class="hero-figure">
+            <img src="devops.jpg" alt="DevOps tools and cloud technology" width="700" height="440">
+            <span class="figure-tag">Cloud + Automation</span>
+            <figcaption class="caption">DevOps automation and cloud technologies.</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- GALLERY WITH INTERACTIVE SEARCH & CATEGORY FILTER -->
+<section id="gallery">
+    <h2>DevOps Image Gallery</h2>
+    <p class="lead">Filter architecture diagrams by domain or search by keyword. Click any card to inspect it in full-screen lightbox view.</p>
+
+    <div class="gallery-controls" role="region" aria-label="Filter gallery diagrams">
+        <div class="filter-pills" role="group" aria-label="Filter by category">
+            <button type="button" class="filter-btn is-active" data-filter="all">All (7)</button>
+            <button type="button" class="filter-btn" data-filter="automation">Automation</button>
+            <button type="button" class="filter-btn" data-filter="containers">Containers</button>
+            <button type="button" class="filter-btn" data-filter="cloud">Cloud &amp; Ops</button>
+        </div>
+        <div class="gallery-search-wrap">
+            <input type="search" id="gallery-search" placeholder="Search diagrams (e.g. Kubernetes, Git)..." aria-label="Search architecture gallery">
+        </div>
+    </div>
+    <p class="run-status" id="gallery-count" role="status">Showing 7 of 7 diagrams</p>
+
+    <div class="gallery-grid" id="gallery-grid">
+        <figure class="gallery-item" data-category="automation">
+            <img src="images/cicd-pipeline.jpg" alt="Five-stage CI/CD pipeline from commit to deploy, all stages passing" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Automation</span>
+            <figcaption><h3>CI/CD pipeline</h3><p>Every commit is built, tested and packaged automatically before it reaches release.</p></figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="containers">
+            <img src="images/docker-containers.jpg" alt="Three isolated containers sharing one container runtime and host operating system" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Containers</span>
+            <figcaption><h3>Container platform</h3><p>Docker images run the same way on a laptop, a test server and production.</p></figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="containers">
+            <img src="images/kubernetes-cluster.jpg" alt="Kubernetes control plane scheduling pods across three worker nodes" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Orchestration</span>
+            <figcaption><h3>Kubernetes cluster</h3><p>Pods are scheduled across nodes and restarted automatically when one fails.</p></figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="cloud">
+            <img src="images/monitoring-dashboard.jpg" alt="Dashboard with a response time line chart, CPU bar chart and uptime gauge" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Monitoring</span>
+            <figcaption><h3>Monitoring dashboard</h3><p>Live metrics and alerts show response time, CPU use and uptime at a glance.</p></figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="cloud">
+            <img src="images/cloud-deployment.jpg" alt="Cloud above three server stacks receiving a new deployment" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Cloud</span>
+            <figcaption><h3>Cloud deployment</h3><p>Infrastructure scales with traffic, and a bad release can be rolled back safely.</p></figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="automation">
+            <img src="images/source-control.jpg" alt="Git graph showing a feature branch merged back into main" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Version control</span>
+            <figcaption><h3>Source control workflow</h3><p>Branches and pull requests keep every review and release traceable.</p></figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="cloud">
+            <img src="images/devops-lifecycle.jpg" alt="Infinity loop showing the DevOps lifecycle from plan to monitor" width="800" height="600" loading="lazy">
+            <span class="gallery-tag">Lifecycle</span>
+            <figcaption><h3>DevOps lifecycle</h3><p>Development and operations work in one continuous loop from plan to monitor.</p></figcaption>
+        </figure>
+    </div>
+    <p id="gallery-empty" class="task-empty" hidden>No diagrams match the current filter.</p>
+</section>
+
+<!-- POSITIONING -->
+<section id="positioning">
+    <h2>CSS Positioning in Practice</h2>
+    <p class="lead">Each box below is a live demo. Scroll this page to see the <strong>fixed</strong> status pill and Top button stay put, and scroll inside the last box to see <strong>sticky</strong> work.</p>
+    <div class="demo-grid">
+        <div class="demo">
+            <h3>1. static <small>(default)</small></h3>
+            <div class="stage">
+                <div class="box box-a">Box A</div>
+                <div class="box box-b pos-static">Box B (static)</div>
+                <div class="box box-c">Box C</div>
+            </div>
+            <p>Elements follow normal document flow. <code>top</code>, <code>left</code> and <code>z-index</code> have <em>no effect</em>. Box B has <code>top: 40px</code> but does not move.</p>
+            <pre><code>.pos-static {
+  position: static;
+  top: 40px; /* ignored */
+}</code></pre>
+        </div>
+        <div class="demo">
+            <h3>2. relative</h3>
+            <div class="stage">
+                <div class="box box-a">Box A</div>
+                <div class="ghost"><div class="box box-b pos-relative">Box B (relative)</div></div>
+                <div class="box box-c">Box C</div>
+            </div>
+            <p>Offset from its <em>own normal position</em>. The dashed outline shows the space it still occupies, so siblings do not reflow. Also the anchor for absolute children.</p>
+            <pre><code>.pos-relative {
+  position: relative;
+  top: 12px;
+  left: 30px;
+}</code></pre>
+        </div>
+        <div class="demo">
+            <h3>3. absolute</h3>
+            <div class="stage stage-anchor">
+                <span class="anchor-label">.stage (position: relative)</span>
+                <div class="box box-b pos-abs pos-abs-tr">top / right</div>
+                <div class="box box-c pos-abs pos-abs-bl">bottom / left</div>
+            </div>
+            <p>Removed from the flow and placed against the nearest <em>positioned ancestor</em>. Used for badges, tooltips, dropdown menus and overlays.</p>
+            <pre><code>.stage { position: relative; }
+.pos-abs-tr {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}</code></pre>
+        </div>
+        <div class="demo">
+            <h3>4. fixed</h3>
+            <div class="stage stage-fixed-info">
+                <div class="mini-viewport"><span class="mini-pill">&#9679; status</span><span class="mini-top">&uarr; Top</span></div>
+            </div>
+            <p>Positioned against the <em>viewport</em>, so it ignores scrolling. Look at the bottom corners of this page: the dark status pill and the Top button are both <code>position: fixed</code>.</p>
+            <pre><code>.fab-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+}</code></pre>
+        </div>
+        <div class="demo demo-wide">
+            <h3>5. sticky</h3>
+            <div class="stage stage-scroll" tabindex="0" aria-label="Scrollable sticky demo">
+                <div class="sticky-head">Sticky header: stays at top: 0 of this box</div>
+                <p>Scroll inside this box. Content moves, the header stays.</p>
+                <p>Sticky behaves like <code>relative</code> until a scroll threshold is reached, then behaves like <code>fixed</code> within its container.</p>
+                <p>This page's navigation bar uses the same idea against the whole viewport.</p>
+                <p>The table in the Process section keeps its column headings visible the same way.</p>
+                <p>Other uses: section titles in long lists, sidebars with a table of contents, shopping cart summaries.</p>
+                <p>The sticky element always stays inside its parent, so when the parent ends, the element scrolls away with it.</p>
+                <p>Remember: a sticky element needs a threshold such as <code>top: 0</code>, and no ancestor between it and the scroller may have <code>overflow: hidden</code>.</p>
+            </div>
+            <pre><code>.sticky-head {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}</code></pre>
+        </div>
+    </div>
+
+    <h3 class="sub-title">Quick Reference</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th scope="col">Value</th><th scope="col">In normal flow?</th><th scope="col">Offsets relative to</th><th scope="col">Industry use</th></tr></thead>
+            <tbody>
+                <tr><td data-label="Value"><code>static</code></td><td data-label="In normal flow?">Yes</td><td data-label="Offsets relative to">Not applicable</td><td data-label="Industry use">Regular content, paragraphs, forms</td></tr>
+                <tr><td data-label="Value"><code>relative</code></td><td data-label="In normal flow?">Yes (space kept)</td><td data-label="Offsets relative to">Its own original position</td><td data-label="Industry use">Anchor for badges and dropdowns, small nudges</td></tr>
+                <tr><td data-label="Value"><code>absolute</code></td><td data-label="In normal flow?">No</td><td data-label="Offsets relative to">Nearest positioned ancestor</td><td data-label="Industry use">Ribbons, tooltips, image captions, modals</td></tr>
+                <tr><td data-label="Value"><code>fixed</code></td><td data-label="In normal flow?">No</td><td data-label="Offsets relative to">Browser viewport</td><td data-label="Industry use">Chat widgets, cookie banners, back-to-top</td></tr>
+                <tr><td data-label="Value"><code>sticky</code></td><td data-label="In normal flow?">Yes until threshold</td><td data-label="Offsets relative to">Nearest scrolling ancestor</td><td data-label="Industry use">Navbars, table headers, sidebars</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- MULTIMEDIA -->
+<section id="media">
+    <h2>DevOps Multimedia</h2>
+    <div class="media-grid">
+        <div class="media-item">
+            <h3>DevOps Audio</h3>
+            <audio controls preload="none"><source src="devops.mp3" type="audio/mpeg">Your browser does not support audio.</audio>
+            <p class="caption">Audio: Introduction to DevOps services.</p>
+        </div>
+        <div class="media-item">
+            <h3>DevOps Video</h3>
+            <video controls preload="metadata" poster="devops.jpg"><source src="devops.mp4" type="video/mp4">Your browser does not support video.</video>
+            <p class="caption">Video: DevOps overview with narration and captions (about 55 seconds).</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+    <h2>DevOps Process</h2>
+    <ol class="steps">
+        <li>Plan</li><li>Code</li><li>Build</li><li>Test</li><li>Deploy</li><li>Monitor</li>
+    </ol>
+    <div class="pipeline-run">
+        <button class="btn-run" id="run-pipeline" type="button">Run pipeline</button>
+        <div class="progress" aria-hidden="true"><span class="progress-bar" id="progress-bar"></span></div>
+        <p class="run-status" id="run-status" role="status">Press the button to watch a release move through every stage.</p>
+    </div>
+
+    <h3 class="sub-title">Technology Table</h3>
+    <div class="table-wrap table-scroll" tabindex="0" aria-label="Technology table, scrollable">
+        <table>
+            <thead><tr><th scope="col">Service</th><th scope="col">Technology</th><th scope="col">Purpose</th></tr></thead>
+            <tbody>
+                <tr><td data-label="Service">Source control</td><td data-label="Technology">GitHub</td><td data-label="Purpose">Version history and pull requests</td></tr>
+                <tr><td data-label="Service">CI/CD</td><td data-label="Technology">Jenkins</td><td data-label="Purpose">Automated build, test and release</td></tr>
+                <tr><td data-label="Service">Containers</td><td data-label="Technology">Docker</td><td data-label="Purpose">Portable application packaging</td></tr>
+                <tr><td data-label="Service">Orchestration</td><td data-label="Technology">Kubernetes</td><td data-label="Purpose">Scaling and self-healing workloads</td></tr>
+                <tr><td data-label="Service">Deployment</td><td data-label="Technology">AWS</td><td data-label="Purpose">Cloud hosting and infrastructure</td></tr>
+                <tr><td data-label="Service">Monitoring</td><td data-label="Technology">Prometheus</td><td data-label="Purpose">Metrics and alerting</td></tr>
+                <tr><td data-label="Service">Dashboards</td><td data-label="Technology">Grafana</td><td data-label="Purpose">Visualising system health</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- DEPLOYMENT TRACKER: CRUD + Local Storage -->
+<section id="tracker">
+    <h2>Deployment Tracker</h2>
+    <p class="lead">Add, view, edit, update and delete deployments. Your records are saved in this browser and survive a refresh.</p>
+
+    <form id="task-form" class="task-form" novalidate>
+        <div class="task-fields">
+            <div class="field">
+                <label for="task-service">Service name</label>
+                <input type="text" id="task-service" maxlength="40" placeholder="e.g. Auth Service" required>
+            </div>
+            <div class="field">
+                <label for="task-version">Version</label>
+                <input type="text" id="task-version" maxlength="15" placeholder="e.g. v1.4.0" required>
+            </div>
+            <div class="field">
+                <label for="task-env">Environment</label>
+                <select id="task-env"><option>Development</option><option>Staging</option><option>Production</option></select>
+            </div>
+            <div class="field">
+                <label for="task-status">Status</label>
+                <select id="task-status"><option>Planned</option><option>Deploying</option><option>Live</option><option>Failed</option></select>
+            </div>
+        </div>
+        <p class="task-error" id="task-error" role="alert"></p>
+        <button type="submit" class="btn btn-primary task-add">Add deployment</button>
+    </form>
+
+    <div class="task-toolbar">
+        <input type="search" id="task-search" placeholder="Search deployments..." aria-label="Search deployments">
+        <button type="button" id="task-clear" class="task-btn task-btn-delete">Delete all</button>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="task-empty" class="task-empty" hidden></p>
+</section>
+
+<!-- LIVE API DATA -->
+<section id="api">
+    <h2>Live API Data</h2>
+    <p class="lead">Customer records loaded live from a public test API.</p>
+    <p><button type="button" class="task-btn" id="api-refresh">Reload data</button></p>
+    <p class="run-status" id="api-status" role="status">Loading...</p>
+    <div class="table-wrap table-scroll" tabindex="0" aria-label="Live API data table, scrollable">
+        <table>
+            <thead><tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Company</th><th scope="col">City</th></tr></thead>
+            <tbody id="api-body"></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact">
+    <h2>Service Request Form</h2>
+
+    <form id="request-form" novalidate>
+        <p class="form-summary" id="form-summary" role="alert" hidden></p>
+
+        <div class="form-grid">
+            <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required minlength="3" maxlength="60" pattern="[A-Za-z][A-Za-z .'\-]*" autocomplete="name">
+                <span class="error" id="name-error"></span>
+            </div>
+            <div class="field">
+                <label for="email">Work email</label>
+                <input type="email" id="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" autocomplete="email">
+                <span class="error" id="email-error"></span>
+            </div>
+            <div class="field">
+                <label for="phone">Mobile number</label>
+                <input type="tel" id="phone" name="phone" required pattern="[6-9][0-9]{9}" inputmode="numeric" maxlength="10" autocomplete="tel">
+                <span class="error" id="phone-error"></span>
+            </div>
+            <div class="field">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" required minlength="2" maxlength="60" autocomplete="organization">
+                <span class="error" id="company-error"></span>
+            </div>
+            <div class="field">
+                <label for="cloud">Cloud provider</label>
+                <select id="cloud" name="cloud" required>
+                    <option value="">Choose...</option><option>AWS</option><option>Azure</option><option>Google Cloud</option><option>On-premise</option>
+                </select>
+                <span class="error" id="cloud-error"></span>
+            </div>
+            <div class="field">
+                <label for="plan">Support plan</label>
+                <select id="plan" name="plan" required>
+                    <option value="">Choose...</option><option>Basic</option><option>Standard</option><option>24/7 Premium</option>
+                </select>
+                <span class="error" id="plan-error"></span>
+            </div>
+            <div class="field">
+                <label for="team">Team size</label>
+                <input type="number" id="team" name="team" required min="1" max="500" step="1">
+                <span class="error" id="team-error"></span>
+            </div>
+            <div class="field">
+                <label for="date">Preferred start date</label>
+                <input type="date" id="date" name="date" required>
+                <span class="error" id="date-error"></span>
+            </div>
+            <div class="field field-full">
+                <label for="repo">Repository link (optional)</label>
+                <input type="url" id="repo" name="repo" placeholder="https://github.com/your-team/your-repo" pattern="https://(www\.)?(github\.com|gitlab\.com|bitbucket\.org)/.+">
+                <span class="error" id="repo-error"></span>
+            </div>
+            <div class="field field-full">
+                <span class="field-label">Service type</span>
+                <div class="options">
+                    <label class="choice"><input type="radio" name="service" id="service-cicd" value="CI/CD" required data-error="service-error"> CI/CD</label>
+                    <label class="choice"><input type="radio" name="service" id="service-containers" value="Containers" data-error="service-error"> Containers</label>
+                    <label class="choice"><input type="radio" name="service" id="service-monitoring" value="Monitoring" data-error="service-error"> Monitoring</label>
+                    <label class="choice"><input type="radio" name="service" id="service-deployment" value="Deployment" data-error="service-error"> Deployment</label>
+                </div>
+                <span class="error" id="service-error"></span>
+            </div>
+            <div class="field field-full">
+                <span class="field-label">Technologies needed</span>
+                <div class="options">
+                    <label class="choice"><input type="checkbox" name="technology" id="tech-github" value="GitHub" data-error="technology-error"> GitHub</label>
+                    <label class="choice"><input type="checkbox" name="technology" id="tech-jenkins" value="Jenkins" data-error="technology-error"> Jenkins</label>
+                    <label class="choice"><input type="checkbox" name="technology" id="tech-docker" value="Docker" data-error="technology-error"> Docker</label>
+                    <label class="choice"><input type="checkbox" name="technology" id="tech-k8s" value="Kubernetes" data-error="technology-error"> Kubernetes</label>
+                    <label class="choice"><input type="checkbox" name="technology" id="tech-aws" value="AWS" data-error="technology-error"> AWS</label>
+                </div>
+                <span class="error" id="technology-error"></span>
+            </div>
+            <div class="field field-full">
+                <label for="brief">Project brief file (optional)</label>
+                <input type="file" id="brief" name="brief" accept=".pdf,.doc,.docx,.txt">
+                <span class="error" id="brief-error"></span>
+            </div>
+            <div class="field field-full">
+                <label for="details">Project details</label>
+                <textarea id="details" name="details" rows="5" required minlength="20" maxlength="500"></textarea>
+                <small class="counter" id="details-count">0 / 500</small>
+                <span class="error" id="details-error"></span>
+            </div>
+            <div class="field field-full">
+                <label class="choice"><input type="checkbox" id="terms" name="terms" required> I agree to be contacted about this request.</label>
+                <span class="error" id="terms-error"></span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-ghost-dark">Reset</button>
+        </div>
+    </form>
+
+    <div class="form-success" id="form-success" role="status" hidden>
+        <p id="success-text"></p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h2 class="footer-title">DevOps Solutions</h2>
+            <p>Automate, deploy and monitor with confidence.</p>
+        </div>
+        <div>
+            <h2 class="footer-title">Quick links</h2>
+            <ul class="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tracker">Deployment Tracker</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="footer-title">Contact</h2>
+            <p>hello@devopssolutions.example</p>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2026 DevOps Solutions. All rights reserved.</p>
+</footer>
+
+<script src="practicum 14.js"></script>
+<script>
+/* Live API table (self-contained, does not depend on the main script) */
+(function () {
+    var body = document.getElementById('api-body');
+    var status = document.getElementById('api-status');
+    var refresh = document.getElementById('api-refresh');
+
+    function cell(label, text) {
+        var td = document.createElement('td');
+        td.setAttribute('data-label', label);
+        td.textContent = text;
+        return td;
+    }
+
+    function load() {
+        status.textContent = 'Loading...';
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(function (r) { if (!r.ok) { throw new Error('bad response'); } return r.json(); })
+            .then(function (users) {
+                while (body.firstChild) { body.firstChild.remove(); }
+                users.forEach(function (u) {
+                    var tr = document.createElement('tr');
+                    tr.append(cell('Name', u.name), cell('Email', u.email), cell('Company', u.company.name), cell('City', u.address.city));
+                    body.appendChild(tr);
+                });
+                status.textContent = users.length + ' records loaded.';
+            })
+            .catch(function () { status.textContent = 'Could not load data. Check your connection and try again.'; });
+    }
+
+    refresh.addEventListener('click', load);
+    load();
+})();
+</script>
+</body>
+</html>

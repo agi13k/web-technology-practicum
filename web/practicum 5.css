@@ -1,0 +1,415 @@
+```css
+/* RESET AND BOX MODEL */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #172b4d;
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+
+/* RESPONSIVE NAVIGATION USING FLEXBOX */
+
+nav {
+    background-color: #0d1b2a;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    padding: 15px;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+/* NAVIGATION LINKS */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+/* NAVIGATION HOVER */
+
+nav a:hover {
+    background-color: #0077b6;
+    color: white;
+}
+
+
+/* SECTIONS */
+
+section {
+    background-color: white;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 25px auto;
+
+    padding: 30px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+}
+
+
+section h2 {
+    color: #172b4d;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* SERVICE CARDS */
+
+article {
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: 23%;
+
+    margin: 1%;
+
+    padding: 20px;
+
+    background-color: #eef6ff;
+
+    border: 1px solid #c9dff5;
+
+    border-radius: 8px;
+
+    min-height: 160px;
+}
+
+
+article h3 {
+    color: #0077b6;
+}
+
+
+/* SERVICE CARD HOVER */
+
+article:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 5px 15px #aaa;
+}
+
+
+/* IMAGE */
+
+img {
+    display: block;
+
+    width: 350px;
+    height: 220px;
+
+    object-fit: cover;
+
+    margin: 20px auto;
+
+    border: 4px solid #172b4d;
+
+    border-radius: 10px;
+
+    max-width: 100%;
+}
+
+
+.caption {
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* LISTS */
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+li {
+    margin: 8px;
+}
+
+
+/* TABLE */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+}
+
+
+th,
+td {
+    border: 1px solid #aaa;
+
+    padding: 12px;
+
+    text-align: left;
+}
+
+
+th {
+    background-color: #172b4d;
+    color: white;
+}
+
+
+tr:hover {
+    background-color: #eef6ff;
+}
+
+
+/* MULTIMEDIA */
+
+audio,
+video,
+iframe {
+    display: block;
+
+    margin: 15px auto;
+
+    max-width: 100%;
+}
+
+
+/* FORM */
+
+form {
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+label {
+    font-weight: bold;
+
+    color: #172b4d;
+
+    display: block;
+
+    margin-top: 10px;
+}
+
+
+/* FORM INPUTS */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 10px;
+
+    margin: 7px 0 15px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* RADIO AND CHECKBOX */
+
+.options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.options input[type="radio"],
+.options input[type="checkbox"] {
+    width: auto;
+
+    margin: 0;
+}
+
+
+.options label {
+    display: inline;
+
+    margin: 0;
+}
+
+
+/* FILE INPUT */
+
+input[type="file"] {
+    background-color: #f5f5f5;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+
+    gap: 15px;
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+    width: 120px;
+
+    background-color: #0077b6;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* BUTTON HOVER */
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #023e8a;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #0d1b2a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+
+    /* Navigation becomes vertical */
+
+    nav {
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: stretch;
+
+        gap: 5px;
+    }
+
+
+    nav a {
+        text-align: center;
+    }
+
+
+    /* Service cards become full width */
+
+    article {
+        width: 100%;
+
+        margin: 10px 0;
+    }
+
+
+    /* Smaller heading */
+
+    header h1 {
+        font-size: 30px;
+    }
+
+
+    /* Smaller section */
+
+    section {
+        width: 95%;
+
+        padding: 20px;
+    }
+
+
+    /* Responsive media */
+
+    iframe,
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* Responsive table */
+
+    table {
+        font-size: 14px;
+    }
+
+}
+```
